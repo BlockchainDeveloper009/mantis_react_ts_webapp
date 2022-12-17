@@ -1,5 +1,7 @@
-import { Chip, createStyles } from '@mantine/core';
+import { Chip, createStyles, Input, TextInput } from '@mantine/core';
 import { useEffect, useState } from "react";
+import { GitHubLogoIcon, NotionLogoIcon } from "@modulz/radix-icons";
+
 const useStyles = createStyles((theme, _params, getRef) => ({
     label: {
       '&[data-checked]': {
@@ -20,7 +22,7 @@ const useStyles = createStyles((theme, _params, getRef) => ({
   }));
 
 
-function ChipsExample() {
+function InputExample() {
     const [value, setValue] = useState(['react']);
     const { classes } = useStyles();
     useEffect(()=> {
@@ -30,15 +32,19 @@ function ChipsExample() {
 
   return (
     <div className="App">
-    <Chip.Group position="center" multiple defaultValue={['react']}>
-      <Chip classNames={classes} value="react">React</Chip>
-      <Chip classNames={classes} value="ng">Angular</Chip>
-      <Chip classNames={classes} value="vue">Vue</Chip>
-      <Chip classNames={classes} value="svelte">Svelte</Chip>
-    </Chip.Group>
+
+      <TextInput
+        icon= {<GitHubLogoIcon/>}
+        rightSection={<NotionLogoIcon/>}
+        label="enter firstName"
+        description = "Enter your legal firstname"
+        error="Name should aplhabets"
+        required />
+        <Input
+        component="select" />
 
     </div>
   );
 }
 
-export default ChipsExample;
+export default InputExample;

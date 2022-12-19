@@ -33,13 +33,13 @@ function TitleAndTextExample() {
 
   return (
     <div className="App">
-      <Title order={2}>THIS IS A BIG</Title>
-      <Text span>Same as below</Text>
-      <Text size="lg" weight={700} underline transform="capitalize">Same as below</Text>
-      <Text component="span">Same as above</Text>
+      <Title order={2}>THIS IS A BIG - TitleAndTestExample</Title>
+      <Text span>Text Span</Text>
+      <Text size="lg" weight={700} underline transform="capitalize">Text weight , underline & with capitalize</Text>
+      <Text component="span">Text span</Text>
       <Text 
       variant="gradient"
-      gradient={{ from: "red", to: "blue", deg: 130}} > hfgjghghjgjhgjNormal link</Text>
+      gradient={{ from: "red", to: "blue", deg: 130}} > varient gradient, red to blue</Text>
       
       
 

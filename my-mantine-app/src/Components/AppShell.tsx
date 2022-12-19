@@ -13,12 +13,24 @@ import {
 import TableExample from './TableExample';
 import ChipsExample from './ChipsExample';
 
+import { 
+    BrowserRouter as Router,
+    Link,
+    Route,
+    Routes 
+} from "react-router-dom";
+import TitleAndTextExample from './TitleAndTextExample';
+import InputExample from './InputExample';
+import Cards from './Cards';
+import CalendarExample from './CalendarExample';
+
 function AppShellExample() {
     const theme = useMantineTheme();
     const [opened, setOpened] = useState(false);
 
   return (
     <div className="App">
+        <Router>
         <AppShell
       styles={{
         main: {
@@ -35,11 +47,26 @@ function AppShellExample() {
             <Text>hello this is tittle</Text>
           </Navbar.Section>
           <Navbar.Section grow mt="lg">
-            <Text>e1</Text>
-            <Text>e2</Text>
-            <Text>e3</Text>
-            <Text>e4</Text>
-            <Text>e5</Text>
+            <div style={{display: "flex", flexDirection: "column"}}>
+                <Text component={Link}  variant="link" to="/">
+                   Home Page
+                </Text>
+                <Text component={Link}  variant="link" to="/input">
+                   Input Example
+                </Text>
+      
+                <Text component={Link}  variant="link" to="/titlePage">
+                   Title Page
+                </Text>
+                <Text component={Link}  variant="link" to="/cardsPage">
+                   Cards Page
+                </Text>
+                <Text component={Link}  variant="link" to="/CalendarExample">
+                CalendarExample
+                </Text>
+                
+            </div>
+           
 
           </Navbar.Section>
 
@@ -77,12 +104,21 @@ function AppShellExample() {
         </Header>
       }
     >
+        <Routes>
+            <Route path="/" element={<ChipsExample/>}></Route>
+            <Route path="/input" element={<InputExample/>}></Route>
+            <Route path="/ChipsExample" element={<TitleAndTextExample/>}></Route>
+            <Route path="/cardsPage" element={<Cards/>}></Route>
+            <Route path="/CalendarExample" element={<CalendarExample/>}></Route>
+            
+            
+        </Routes>
 
       <Text>Resize app to see responsive navbar in action</Text>
       {/* <TableExample/> */}
-      <ChipsExample/>
+      
     </AppShell>
-
+    </Router>
     </div>
   );
 }

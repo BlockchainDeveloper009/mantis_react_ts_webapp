@@ -1,6 +1,7 @@
 import { Chip, createStyles, Input, TextInput } from '@mantine/core';
 import { useEffect, useState } from "react";
 import { GitHubLogoIcon, NotionLogoIcon } from "@modulz/radix-icons";
+import { Calendar } from '@mantine/dates';
 
 const useStyles = createStyles((theme, _params, getRef) => ({
     label: {
@@ -24,9 +25,11 @@ const useStyles = createStyles((theme, _params, getRef) => ({
 
 function InputExample() {
     const [value, setValue] = useState(['react']);
+        const [calendarVal, setCalendarVal] = useState(new Date());
     const { classes } = useStyles();
     useEffect(()=> {
-        console.log(value)
+        console.log(calendarVal)
+        
     })
 
 
@@ -42,6 +45,9 @@ function InputExample() {
         required />
         <Input
         component="select" />
+      
+      <Calendar  value={calendarVal}  amountOfMonths={2} labelFormat="MM/YYYY"/>
+
 
     </div>
   );

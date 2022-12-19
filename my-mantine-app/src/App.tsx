@@ -8,7 +8,7 @@ import { useHotkeys, useLocalStorage } from '@mantine/hooks';
 import Buttons from './Components/Buttons';
 import Header from './Components/Header';
 import AppShellExample from './Components/AppShell';
-import TitleAndTextExample from './Components/TitleAndTextExample';
+
 
 //import { createStylesServer, ServerStyles } from '@mantine/ssr';
 
@@ -24,10 +24,10 @@ function App() {
             <MantineProvider theme={{colorScheme}}>
               <Paper radius={0} style = {{minHeight: "100vh"}}>
                 <AppShellExample/>
-                <TitleAndTextExample/>
-                <Cards />
+                
+                
                 <LightDarkButton/>
-                <Cards></Cards>
+                
                 <Buttons/>
   
                 
